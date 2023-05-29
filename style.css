@@ -1,0 +1,632 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: rgb(214, 214, 214, 0.6);
+}
+
+header {
+    width: 80vw;
+    margin: auto;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+header nav .hamburger .bi-list-nested {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 1.5rem;
+    display: none;
+}
+
+header nav .hamburger .bi-x {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 1.5rem;
+}
+
+.bi-remove {
+    display: none;
+}
+
+/* nav responsiveness*/
+
+@media screen and (max-width: 700px) {
+    header nav .hamburger .bi-list-nested {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    header nav ul {
+        background: orange;
+        width: 70%;
+        top: 0px;
+        right: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        z-index: 1;
+        align-items: center;
+        height: 60vh;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        border-radius: 6px;
+    }
+
+    header nav ul li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header nav ul li a {
+        margin-bottom: 0.7rem;
+        transition: 0.5s linear;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    header nav ul li a:hover {
+        border-bottom: 2px solid gray;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        border-radius: 5px;
+        background: #fff;
+        color: orange;
+        padding: 0.5rem;
+        font-weight: bold;
+    }
+
+    header nav .hamburger .bi-list-nested {
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        z-index: 2;
+        font-size: 30px;
+        color: orange;
+        font-weight: bold;
+    }
+
+    header nav .hamburger .bi-x {
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        z-index: 2;
+        font-size: 30px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .hidden_nav_hamburger {
+        display: none;
+    }
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    align-items: center;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+    /* border-radius: 3px; */
+    padding: 15px 6px 15px 5px;
+    position: relative;
+}
+
+header nav span {
+    color: orange;
+}
+
+header nav h4 {
+    margin-left: 0.7rem;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0rem 0.6rem;
+}
+
+header nav ul li i {
+    margin: 0rem 0.3rem;
+}
+
+header nav ul a {
+    text-decoration: none;
+    color: rgb(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    transition: 0.3s linear;
+}
+
+header nav ul a:hover {
+    color: orange;
+}
+
+header .brand_nav {
+    width: 100%;
+    height: auto;
+    background: #000;
+    color: #fff;
+}
+
+.brand_nav ul {
+    display: flex;
+    list-style: none;
+    height: 50px;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    transition: 0.4s linear;
+    padding: 0rem 0.7rem;
+}
+
+header .brand_nav ul a {
+    width: 100%;
+    text-decoration: none;
+    color: rgba(241, 239, 239, 0.6);
+}
+
+header .brand_nav ul img {
+    height: 100%;
+    filter: invert(100%);
+}
+
+header .brand_nav ul li {
+    position: relative;
+}
+
+header .brand_nav ul li a {
+    transition: 0.3s linear;
+}
+
+header .brand_nav ul li:nth-child(3) a:hover,
+header .brand_nav ul li:nth-child(5) a:hover {
+    color: #fff;
+}
+
+header .brand_nav ul li:nth-child(2) {
+    background: orange;
+    height: 100%;
+    text-align: center;
+    width: 80px;
+}
+
+header .brand_nav ul li:nth-child(4) img {
+    height: 35px;
+}
+
+header .brand_nav ul li:nth-child(4) {
+    transition: 0.3s linear;
+}
+
+header .brand_nav ul li:nth-child(4):hover {
+    background: orange;
+    height: 50px;
+    padding: 0.5rem 0.5rem;
+}
+
+header .brand_nav ul li:nth-last-child(1) i {
+    color: orange;
+    font-weight: bold;
+}
+
+header .brand_nav ul li:nth-child(1) .select_box {
+    position: absolute;
+    top: 150%;
+    left: 25px;
+    background: orange;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: 1s linear;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: hidden;
+    z-index: 99;
+}
+
+header .brand_nav ul li:nth-child(1) .select_box h5 {
+    padding: 0.3rem 0;
+    cursor: pointer;
+}
+
+header .brand_nav ul li:nth-child(1) .select_box h5:hover {
+    color: #292828;
+}
+
+header .brand_nav ul li:nth-child(1) .hidden_box {
+    display: none;
+}
+
+.brand_nav .categories {
+    background: orange;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: 1s linear;
+}
+
+.brand_nav .categories li:hover {
+    color: #292828;
+}
+
+/* Shoe Section styling */
+
+section {
+    width: 80vw;
+    background: #fff;
+    margin: auto;
+    height: auto;
+    display: flex;
+}
+
+section .shoes_boxes {
+    width: 80%;
+    height: auto;
+}
+
+.shoes_box_areas {
+    display: flex;
+    margin-left: 0.6rem;
+    flex-wrap: wrap;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+section .shoes_boxes nav {
+    margin: 0.6rem 0rem;
+    display: flex;
+}
+
+section .shoes_boxes nav h6 {
+    margin: 0 0.5rem;
+    font-size: 12px;
+    color: #6e6d6d;
+}
+
+section .shoes_boxes nav h6 i {
+    font-weight: bold;
+}
+
+section .shoes_boxes .shoes_box_area {
+    height: 330px;
+    width: 200px;
+    border-radius: 6px;
+    margin: 1rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+}
+
+section .shoes_boxes .shoes_box_area:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -300px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -900px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+section .shoes_boxes .shoes_box_area .shoes_images {
+    width: 100%;
+    height: 40%;
+
+}
+
+section .shoes_boxes .shoes_box_area .shoes_images img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+section .shoes_boxes .shoes_filter {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+section .shoes_boxes .shoes_filter h5 {
+    margin: 0.3rem 0.5rem;
+}
+
+section .shoes_boxes .shoes_filter h5 i {
+    margin-left: 0.6rem;
+}
+
+section .shoes_boxes .shoes_filter .sort h5 {
+    margin-right: 3rem;
+    padding: 0.6rem 1.3rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+section .shoes_boxes .shoes_filter .sort ul {
+    margin-right: 3rem;
+    padding: 0.6rem;
+    margin-top: 0px;
+    cursor: pointer;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    position: absolute;
+    top: 92%;
+    right: -3px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+section .shoes_boxes .shoes_filter .sort ul li {
+    padding: 0.5rem;
+    background: #dfdede;
+    margin-bottom: 0.4rem;
+    width: 100px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+section .shoes_boxes .shoes_filter .sort ul li:hover {
+    color: #fff;
+    background: #1b1b1b;
+}
+
+section .shoes_boxes .shoes_filter .sort .sorted_list {
+    display: none;
+}
+
+.shoes_description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.shoes_description h5 {
+    margin-top: 0.3rem;
+    color: orange;
+    text-overflow: ellipsis;
+}
+
+.shoes_rate_quantity {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0.7rem;
+}
+
+.rate p {
+    font-weight: bold;
+}
+
+.quantity {
+    display: flex;
+}
+
+.discount {
+    display: flex;
+    margin: 0.5rem 0;
+    /* justify-content: space-between; */
+}
+
+.discount p {
+    margin: 0 0.6rem;
+}
+
+.discountpercentage {
+    color: orange;
+    border: 2px solid orange;
+    padding: 0.1rem 0.8rem 0.1rem 0.8rem;
+    background: rgb(250, 211, 138);
+    font-weight: bold;
+    border-radius: 7px;
+    font-size: 70%;
+}
+
+.quantity .bi {
+    margin: 0rem 0.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+}
+
+.quantity .bi:hover {
+    color: orange;
+}
+
+.shoes_box_areas .shoes_box_area .color {
+    display: flex;
+    /* margin: 0 0.7rem 0.7rem 0.7rem; */
+    border-top: 2px solid gray;
+    justify-content: space-between;
+    border-radius: 7px;
+    padding: 0.5rem 0 0.7rem 0;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;; */
+}
+
+.shoes_box_areas .shoes_box_area .color h6 {
+    margin: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.shoes_box_areas .shoes_box_area .color .material {
+    color: orange;
+}
+
+section .pagination {
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0rem;
+
+}
+
+section .pagination i {
+    font-weight: bold;
+    margin: 0 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 4px;
+}
+
+footer {
+    width: 80vw;
+    margin: auto;
+    height: auto;
+}
+
+footer .footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer .footer .term_Condition {
+    width: 100%;
+    background: #0c0c0c;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+footer .footer .term_Condition a {
+    text-decoration: none;
+    padding: 0 1rem;
+    color: #fff;
+    border-right: 2px solid white;
+}
+
+footer .footer .copyright {
+    background: #fff;
+    width: 100%;
+    padding: 1rem 0;
+    justify-content: center;
+    display: flex;
+}
+
+footer .footer .copyright h5 {
+    margin: 0 0.4rem;
+}
+
+section aside {
+    width: 18%;
+    display: flex;
+    background: rgb(0, 0, 0, 0.1);
+    justify-content: flex-end;
+    margin: 2rem 2rem 0.5rem 2rem;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    */
+}
+
+.filter_box {
+    width: 100%;
+    margin: 0.8rem 0.8rem;
+    overflow: hidden;
+}
+
+.filter_box_area {
+    width: 95%;
+    /* border: 2px solid red; */
+    overflow: hidden;
+}
+
+.filter_box h6 {
+    font-size: 15px;
+}
+
+.filter_box p {
+    margin-top: 0.7rem;
+}
+
+.shoes_check {
+    margin-top: 0.7rem;
+}
+
+.shoes_checked {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    margin: 1.5rem 0;
+    width: 100%;
+}
+
+.shoes_checked i {
+    font-size: 20px;
+}
+
+.shoes_check li {
+    list-style: none;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.shoes_check li i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.shoes_check li .bi-toggle2-on {
+    position: absolute;
+    right: 7px;
+    color: orange;
+}
+
+.shoes_check li .bi-toggle2-off {
+    position: absolute;
+    right: 7px;
+}
+
+.on_hide {
+    display: none;
+}
+
+.ProgressBar {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.ProgressBar::before {
+    content: '';
+    width: 88%;
+    position: absolute;
+    height: 4px;
+    background: rgb(0, 0, 0, 0.3);
+    top: 7px;
+    left: 0px;
+}
+
+.ProgressBar .progress_bar_price {
+    position: relative;
+    width: 44%;
+}
